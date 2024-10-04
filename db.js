@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
+const DB_URL = process.env.DB_URL;  
 
 const connectDB = async () =>  {
-    await mongoose.connect('mongodb://localhost:27017/HOTEL_DB',{
+    await mongoose.connect(DB_URL,{
 
       // useNewUrlParser: true, // Optional, but recommended for newer versions
       // useUnifiedTopology: true, // Optional, but recommended for newer versions
