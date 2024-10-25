@@ -28,7 +28,7 @@ router.get("/:taste", async (req,res)=>{
     const taste = req.params.taste;
     if(taste=='spicy' || taste == 'sweet' || taste=='savory' || taste=='bitter' || taste=='sour'){
       const response = await Menu.find({taste:taste})
-      console.log("DATA FETCHED");
+      console.log("DATA FETCHED"); 
       res.status(200).json(response)
     }else{
       console.log("DATA FETCEHED FAILED");

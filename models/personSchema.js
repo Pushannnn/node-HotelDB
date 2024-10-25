@@ -15,6 +15,14 @@ const personSchema = mongoose.Schema({
     enum: ['computerengineer', 'datascience', 'devops'], // Limits work field to specific values
     required: true
   },
+  username : {
+    required: true,
+    type : String
+  },
+  password : {
+    required : true,
+    type : String
+  }
 })
 
 const Person = mongoose.model('person',personSchema);
