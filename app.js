@@ -20,10 +20,11 @@ const logRequest = (req,res,next) =>{
 }
 
 app.use(logRequest)
-//coneecting database
 
 app.set("view engine","ejs");
 
+
+//authencation
 app.use(passport.initialize());
 const localAuthMidlleware = passport.authenticate('local',{session:false});
 
@@ -40,7 +41,7 @@ app.use("/person",localAuthMidlleware,personRoute);
 //calling menu
 const menuRouter = require('./routes/menuRoutes')
 //using menuroute
-app.use("/menu",localAuthMidlleware,menuRouter)
+app.use("/menu",menuRouter)
 
 app.listen(PORT,()=>{
   console.log("SERVER IS RUNNING IN BACKGROUND...");
